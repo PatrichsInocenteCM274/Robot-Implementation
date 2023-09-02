@@ -1,3 +1,5 @@
+# this code is a modification of OMES' code, the original code is provided in https://omes-va.com/deteccion-de-colores2/
+
 import cv2
 import numpy as np
 import math
