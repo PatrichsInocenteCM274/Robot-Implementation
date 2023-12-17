@@ -3,6 +3,15 @@
 import cv2
 import numpy as np
 import math
+import rospy
+from std_msgs.msg import Int16
+import sys, signal
+
+def signal_handler(signal, frame):
+    print("\nprogram exiting gracefully")
+    cap.release()
+    cv2.destroyAllWindows()
+    sys.exit(0)
 
 def dibujar(mask,color):
   contornos,_ = cv2.findContours(mask, cv2.RETR_EXTERNAL,
@@ -12,26 +21,34 @@ def dibujar(mask,color):
   y=[0,0]    
   for c in contornos:
     area = cv2.contourArea(c)
-    if area > 3000 and indice<2:
+    if area > 1000 and indice<1:
       M = cv2.moments(c)
       if (M["m00"]==0): M["m00"]=1
       x[indice] = int(M["m10"]/M["m00"])
       y[indice] = int(M['m01']/M['m00'])
       nuevoContorno = cv2.convexHull(c)
+      if x[indice] > 380.0:
+      	mensaje.data = 20;
+      	pub_giro.publish(mensaje);
+      if x[indice] < 280.0:
+      	mensaje.data = -20;
+      	pub_giro.publish(mensaje);
+      if x[indice] > 280.0 and x[indice] < 380:
+      	mensaje.data = 0;
+      	pub_giro.publish(mensaje);
       cv2.circle(frame,(x[indice],y[indice]),7,(0,255,0),-1)
       cv2.putText(frame,'{},{}'.format(x[indice],y[indice]),(x[indice]+10,y[indice]), font, 0.75,(0,255,0),1,cv2.LINE_AA)
       cv2.drawContours(frame, [nuevoContorno], 0, color, 3)
       indice = indice+1
-  if indice ==1:
-      cv2.putText(frame,'Distance: {}'.format(0.0),(0,20), font, 0.75,(0,255,0),1,cv2.LINE_AA)
-  else:
-      cv2.putText(frame,'Distance: {}'.format(math.sqrt(pow(x[1]-x[0],2)+pow(y[1]-y[0],2))),(0,20), font, 0.75,(0,255,0),1,cv2.LINE_AA)
+      
 
-cap = cv2.VideoCapture('http://192.168.43.1:8080/video')
+rospy.init_node('camera_control_from_python')
+pub_giro = rospy.Publisher('/set_angle_camera', Int16, queue_size=10)
+mensaje = Int16() 
+cap = cv2.VideoCapture('http://192.168.12.186:8080/video')
 
-azulBajo = np.array([100,100,20],np.uint8)
-azulAlto = np.array([125,255,255],np.uint8)
-
+ColorBajo = np.array([40, 40, 40], np.uint8)
+ColorAlto = np.array([80, 255, 255], np.uint8)
 font = cv2.FONT_HERSHEY_SIMPLEX
 while True:
 
@@ -39,10 +56,9 @@ while True:
 
   if ret == True:
     frameHSV = cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)
-    maskAzul = cv2.inRange(frameHSV,azulBajo,azulAlto)
-    dibujar(maskAzul,(255,0,0))
+    maskColor = cv2.inRange(frameHSV,ColorBajo,ColorAlto)
+    dibujar(maskColor,(255,0,0))
     cv2.imshow('frame',frame)
     if cv2.waitKey(1) & 0xFF == ord('s'):
       break
-cap.release()
-cv2.destroyAllWindows()
+
