@@ -1,6 +1,6 @@
 # Robot-Implementation
 
-Este Repositorio es la continuación del repositorio Human Following Robot, en esta ocasión usando un robot construido desde cero, construido con las funcionalidades necesarias para realizar el seguimiento de Objetivos. El robot construido fue el siguiente:
+Este Repositorio es la continuación del repositorio Human Following Robot, en esta ocasión usando un robot construido desde cero y equipado con los componentes electronicos necesarios para realizar el seguimiento de Objetivos. El robot construido fue el siguiente:
 
 ![robot_ensamblado](https://github.com/PatrichsInocenteCM274/Robot-Implementation/assets/30361234/a461e3a6-4a59-4448-b892-3676163783bb)
 
