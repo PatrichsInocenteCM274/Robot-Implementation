@@ -5,7 +5,7 @@ Este Repositorio es la continuación del repositorio Human Following Robot, en e
 ![robot_ensamblado](https://github.com/PatrichsInocenteCM274/Robot-Implementation/assets/30361234/a461e3a6-4a59-4448-b892-3676163783bb)
 
 ## Objetivo del Proyecto
-Proporcionar a un robot la capacidad de seguimiento de objetivos mediante el algoritmo de aprendizaje por refuerzo DDPG.
+Proporcionar a un robot la capacidad de seguimiento de objetivos mediante el algoritmo de aprendizaje por refuerzo DDPG, tarea que el robot debe desempeñar sin tropezar con algun obstaculo presente en el entorno.
 
 ![analisis_entorno](https://github.com/PatrichsInocenteCM274/Robot-Implementation/assets/30361234/cfa3a8e9-d6b5-402b-ac1d-dae0ad512c3a)
 
