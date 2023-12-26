@@ -12,14 +12,5 @@ Proporcionar a un robot la capacidad de seguimiento de objetivos mediante el alg
 
 ### Se puede observar las pruebas de desempeño en los siguientes videos:
 
-
-
-https://github.com/PatrichsInocenteCM274/Robot-Implementation/assets/30361234/014620f2-6dc7-4949-b897-97c9d94869d7
-
-
-
-https://github.com/PatrichsInocenteCM274/Robot-Implementation/assets/30361234/be56d3f0-d5d4-4313-8106-c1aa301a4b34
-
-### La demostración completa se puede encontrar en:  
-https://www.youtube.com/watch?v=dBy50eSXVdQ&t=1s  
-https://www.youtube.com/watch?v=uH3AV5dYAhU  
+[![](https://markdown-videos.deta.dev/youtube/uH3AV5dYAhU )](https://youtu.be/uH3AV5dYAhU )
+[![](https://markdown-videos.deta.dev/youtube/dBy50eSXVdQ&t=1s)](https://youtu.be/dBy50eSXVdQ&t=1s)
