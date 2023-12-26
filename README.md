@@ -12,5 +12,10 @@ Proporcionar a un robot la capacidad de seguimiento de objetivos mediante el alg
 
 ### Se puede observar las pruebas de desempeño en los siguientes videos:
 
-[![](https://markdown-videos.deta.dev/youtube/uH3AV5dYAhU )](https://youtu.be/uH3AV5dYAhU )
-[![](https://markdown-videos.deta.dev/youtube/dBy50eSXVdQ&t=1s)](https://youtu.be/dBy50eSXVdQ&t=1s)
+### VIDEO 1:
+[<img src="https://img.youtube.com/vi/uH3AV5dYAhU/hqdefault.jpg" width="800" height="540"
+/>](https://www.youtube.com/embed/uH3AV5dYAhU)
+
+### VIDEO 2:
+[<img src="https://img.youtube.com/vi/dBy50eSXVdQ/hqdefault.jpg" width="800" height="540"
+/>](https://www.youtube.com/embed/dBy50eSXVdQ)
